@@ -1,0 +1,2 @@
+rootProject.name='git test'
+include ':app'
