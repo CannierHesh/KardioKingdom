@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">KardioKingdom</string>
+    <string name="registerTop">Register</string>
+    <string name="regusername">Username</string>
+    <string name="regemail">E-Mail</string>
+    <string name="regpw">Password</string>
+    <string name="registerBtn">Register</string>
+    <string name="alreadyhaveaccount">Already have an account?</string>
+    <string name="regloginbottom">Login</string>
+    <string name="typeusername">Type your Username</string>
+    <string name="typeemail">Type your E-Mail</string>
+    <string name="typepw">Type your Password</string>
+    <string name="logintop">Login</string>
+    <string name="loginbtn">Login</string>
+    <string name="noaccountyet">No Account yet?</string>
+    <string name="logregbot">Register</string>
+    <string name="fgtpw">Forgot Password?</string>
+    <string name="changepw">Change Password</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="userprofileName">Name Name</string>
+    <string name="savebtn">Save</string>
+    <string name="deletebtn">Delete Account</string>
+    <string name="logoutbtn">Logout</string>
+    <string name="homemealplan">Meal Plan</string>
+    <string name="homeexercise">Exercises</string>
+    <string name="welcomeuser">Welcome, User!</string>
+
+
 </resources>
