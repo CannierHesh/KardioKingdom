@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">KardioKingdom_Binura</string>
+    <string name="exercisestop">Exercises</string>
+    <string name="admin">Admin</string>
+    <string name="addnew">Add New</string>
+    <string name="add">Add</string>
+    <string name="exname">Name of the Exercise</string>
+    <string name="exdes">Description</string>
+    <string name="workout">Workout</string>
+    <string name="rest">Rest</string>
+    <string name="rounds">Rounds</string>
+    <string name="thumb">Thumbnail</string>
+    <string name="save">Save</string>
+    <string name="remove">Remove</string>
+</resources>
