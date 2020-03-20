@@ -1,0 +1,2 @@
+rootProject.name='MAD-Payment'
+include ':app'
