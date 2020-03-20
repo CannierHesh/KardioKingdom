@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">MAD-Payment</string>
+    <string name="app_name">KardioKingdom</string>
+    <string name="todo1">TODO</string>
+    <string name="textview">TextView</string>
+    <string name="expiration_date">Expiration Date</string>
+    <string name="cvv">CVV</string>
+    <string name="todo">TODO</string>
+    <string name="card_number">Card Number</string>
+    <string name="txtlink">Edit Details</string>
+    <string name="Name">Daren Rex</string>
 </resources>
