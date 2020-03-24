@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 
 public class DBHandler extends SQLiteOpenHelper {
 
-    public static final String Database_Name = "PaymentInfo.bd";
+    public static final String Database_Name = "PaymentInfo.db";
     public static final String Table_Name = "payment";
     public static final String Col1 = "ID";
     public static final String Col2 = "CardNo";
