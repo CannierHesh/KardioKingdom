@@ -137,7 +137,6 @@
         android:layout_marginRight="137dp"
         android:layout_marginStart="138dp"
         android:layout_marginTop="19dp"
-        android:onClick="sendMessage"
         android:text="@string/btnEdit" />
 
     <EditText
@@ -184,7 +183,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="131dp"
-        android:onClick="displayToast"
         android:layout_marginLeft="145dp"
         android:layout_marginStart="145dp"
         android:text="@string/btnSave" />

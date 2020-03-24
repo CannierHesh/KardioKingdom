@@ -155,7 +155,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="137dp"
-        android:onClick="displayToast"
         android:layout_marginLeft="92dp"
         android:layout_marginStart="92dp"
         android:text="@string/btnSave" />
@@ -167,10 +166,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="138dp"
-        android:layout_marginLeft="233dp"
-        android:onClick="displayToast1"
-        android:layout_marginStart="233dp"
+        android:layout_marginBottom="137dp"
+        android:layout_marginLeft="238dp"
+        android:layout_marginStart="238dp"
         android:text="@string/btnRemove" />
 
 </RelativeLayout>
