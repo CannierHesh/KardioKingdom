@@ -5,7 +5,11 @@
     <string name="expiration_date">Expiration Date</string>
     <string name="cvv">CVV</string>
     <string name="todo">TODO</string>
-    <string name="card_number">Card Number</string>
-    <string name="txtlink">Edit Details</string>
+    <string name="btnEdit">Edit Details</string>
     <string name="Name">Daren Rex</string>
+    <string name="cardNo">Card Number</string>
+    <string name="btnSave">Save</string>
+    <string name="btnRemove">Remove</string>
+    <string name="paymentDetails">Payment Details</string>
+
 </resources>

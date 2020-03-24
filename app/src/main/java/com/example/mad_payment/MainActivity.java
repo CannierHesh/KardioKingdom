@@ -6,26 +6,52 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button;
+
+    public static final String EXTRA_MESSAGE =
+            "com.example.myfirstapp.MESSAGE";
+
+
+
+
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState)
+    { super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        button =(Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OpenActivity2();
-            }
-        });
     }
-    public void OpenActivity2(){
+
+    /** Called when the user taps the Send button */
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, PaymentEditPage.class);
+        EditText editText = (EditText) findViewById(R.id.editText);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message); startActivity(intent);
+
+        EditText editText2 = (EditText) findViewById(R.id.editText2);
+        String message2 = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message); startActivity(intent);
+
+        EditText editText3 = (EditText) findViewById(R.id.editText3);
+        String message3 = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message); startActivity(intent);
+
+
+
+
+
+        }
+
+
+
+
+   public void OpenActivity2(){
         Intent intent= new Intent(this, PaymentEditPage.class);
         startActivity(intent);
     }

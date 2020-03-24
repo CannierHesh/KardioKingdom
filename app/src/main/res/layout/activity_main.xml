@@ -9,17 +9,17 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="39dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/textView6"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="71dp"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="185dp"
-        android:text="@string/textview"
+        android:layout_marginLeft="74dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="14dp"
+        android:text="Payment Information"
         android:textColor="#F3EDED"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -27,7 +27,7 @@
         tools:text="Payment Information" />
 
     <RadioButton
-        android:id="@+id/radioButton"
+        android:id="@+id/radioButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -74,77 +74,6 @@
         app:srcCompat="@drawable/nn"
         android:contentDescription="TODO" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="335dp"
-        android:layout_marginLeft="57dp"
-        android:layout_marginStart="57dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/card_number"
-        android:textColor="#F4F2F2" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="288dp"
-        android:layout_marginLeft="58dp"
-        android:layout_marginStart="58dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/expiration_date"
-        android:textColor="#F4F2F2" />
-
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="241dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginStart="60dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/cvv"
-        android:textColor="#E6E2E2"
-        android:autofillHints="" />
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="140dp"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        app:cardCornerRadius="25dp"
-        android:layout_centerHorizontal="true"
-        app:cardElevation="10dp"
-        android:onClick="displayToast"
-        android:layout_marginBottom="136dp" >
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="Save"
-                android:textSize="24sp" />
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
     <ImageView
         android:id="@+id/imageView14"
         android:layout_width="80dp"
@@ -160,33 +89,105 @@
         app:srcCompat="@drawable/qa" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/imageView14"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="126dp"
+        android:layout_marginTop="-5dp"
         android:text="@string/Name"
         android:textColor="#F1EDEB"
         android:textSize="24sp"
         android:textStyle="bold"
         tools:text="Daren Rex" />
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="349dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginLeft="58dp"
+        android:layout_marginRight="139dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="337dp"
+        android:ems="10"
+        android:hint="@string/cardNo"
+        android:inputType="textPersonName" />
+
     <Button
         android:id="@+id/button"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="69dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginLeft="138dp"
+        android:layout_marginRight="137dp"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="19dp"
+        android:onClick="sendMessage"
+        android:text="@string/btnEdit" />
+
+    <EditText
+        android:id="@+id/editText2"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="283dp"
+        android:layout_marginEnd="139dp"
+        android:layout_marginLeft="58dp"
+        android:layout_marginRight="139dp"
+        android:layout_marginStart="58dp"
+        android:ems="10"
+        android:hint="@string/expiration_date"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="209dp"
+        android:layout_marginEnd="141dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginRight="141dp"
+        android:layout_marginStart="56dp"
+        android:ems="10"
+        android:hint="@string/cvv"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="121dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="69dp"
-        android:layout_marginLeft="155dp"
-        android:layout_marginStart="155dp"
-        android:background="@color/cardview_shadow_end_color"
-        android:text="Edit Details"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="18dp" />
+        android:layout_marginBottom="131dp"
+        android:onClick="displayToast"
+        android:layout_marginLeft="145dp"
+        android:layout_marginStart="145dp"
+        android:text="@string/btnSave" />
 
 </RelativeLayout>
 
