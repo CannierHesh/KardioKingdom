@@ -15,6 +15,7 @@
     <string name="m4">Snack</string>
     <string name="m5">Dinner</string>
     <string name="button">Add</string>
+    <string name="button2">Edit</string>
     <string name="t1">Add Meal</string>
     <string name="t2">Add Snack</string>
     <string name="t3">Add Lunch</string>
@@ -27,6 +28,6 @@
     <string name="tt4">Veggies and Hummus</string>
     <string name="tt5">mini pizza</string>
     <string name="tt6">Veggies and cottage cheese</string>
-    <string name="clear">Clear</string>
+    <string name="clear">Delete</string>
     <string name="save">Save</string>
 </resources>

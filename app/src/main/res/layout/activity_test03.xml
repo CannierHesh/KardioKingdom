@@ -8,14 +8,15 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="465dp"
-        android:layout_height="782dp"
+        android:layout_width="505dp"
+        android:layout_height="827dp"
         android:layout_marginTop="56dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766"
+        app:layout_constraintVertical_bias="0.722"
         app:srcCompat="@drawable/cc" />
 
     <TextView
@@ -140,7 +141,7 @@
         android:layout_marginStart="160dp"
         android:layout_marginLeft="160dp"
         android:layout_marginBottom="16dp"
-        android:background="?attr/colorControlNormal"
+        android:background="@android:color/background_dark"
         android:text="@string/button"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
