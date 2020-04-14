@@ -41,6 +41,8 @@ public class test03 extends AppCompatActivity {
                         else
                             Toast.makeText(test03.this,"Data not Inserted",Toast.LENGTH_LONG).show();
 
+                        Intent intent = new Intent(test03.this,MainActivity.class);
+                        startActivity(intent);
                     }
                 }
         );
