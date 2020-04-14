@@ -6,31 +6,39 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class Edit extends AppCompatActivity {
-     private Button Button7;
-    private Button Button8;
+    DatabaseHelper myDb;
+    EditText editBreakfast;
+    Button btnDelete;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
-        Button7 = (Button)findViewById(R.id.button7);
-        Button7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Edit.this,test04.class);
-                startActivity(intent);
-            }
-        });
+        myDb = new DatabaseHelper(this);
+        editBreakfast = (EditText)findViewById(R.id.editText_b);
+        btnDelete = (Button)findViewById(R.id.button_Delete);
 
-        Button8 = (Button)findViewById(R.id.button8);
-        Button8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Edit.this,MainActivity.class);
-                startActivity(intent);
-            }
-        });
+        DeleteData();
     }
+public void DeleteData(){
+
+    btnDelete.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Integer deleteRows = myDb.deleteData(editBreakfast.getText().toString());
+            if (deleteRows >0)
+
+                    Toast.makeText(Edit.this," MealPlan Deleted",Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(Edit.this,"Data not Deleted",Toast.LENGTH_LONG).show();
+
+        }
+    });
+}
+
 }

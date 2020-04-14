@@ -9,11 +9,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Mealplans.db";
     public static final String TABLE_NAME = "Meal_table";
-    public static final String COL_1 = "BREAKFAST";
-    public static final String COL_2 = "SNACK";
-    public static final String COL_3 = "LUNCH";
-    public static final String COL_4 = "SNACKS";
-    public static final String COL_5 = "DINNER";
+    public static final String COL_1 = "ID";
+    public static final String COL_2 = "BREAKFAST";
+    public static final String COL_3 = "SNACK";
+    public static final String COL_4 = "LUNCH";
+    public static final String COL_5 = "SNACKS";
+    public static final String COL_6 = "DINNER";
     public DatabaseHelper( Context context) {
         super(context, DATABASE_NAME, null, 1);
 
@@ -21,7 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME +" (BREAKFAST TEXT PRIMARY KEY,SNACK TEXT,LUNCH TEXT,SNACKS TEXT,DINNER TEXT)");
+        db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT,BREAKFAST TEXT,SNACK TEXT,LUNCH TEXT,SNACKS TEXT,DINNER TEXT)");
 
     }
 
@@ -34,11 +35,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean insertData (String breakfast,String snack,String lunch,String snacks,String dinner) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_1,breakfast);
-        contentValues.put(COL_2,snack);
-        contentValues.put(COL_3,lunch);
-        contentValues.put(COL_4,snacks);
-        contentValues.put(COL_5,dinner);
+        contentValues.put(COL_2,breakfast);
+        contentValues.put(COL_3,snack);
+        contentValues.put(COL_4,lunch);
+        contentValues.put(COL_5,snacks);
+        contentValues.put(COL_6,dinner);
         long result = db.insert (TABLE_NAME,null ,contentValues);
         if (result ==-1)
             return false;
@@ -46,5 +47,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
 
     }
+
+////////////////////////////////////////
+public Integer deleteData (String id){
+    SQLiteDatabase db = this.getWritableDatabase();
+    return db.delete(TABLE_NAME,"ID = ?",new String[] {id});
+}
+
 }
 

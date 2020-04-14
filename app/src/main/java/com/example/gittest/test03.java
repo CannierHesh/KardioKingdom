@@ -37,7 +37,7 @@ public class test03 extends AppCompatActivity {
                     public void onClick(View v) {
                         Boolean isInserted = myDb.insertData(editBreakfast.getText().toString(),editSnack.getText().toString(),editLunch.getText().toString(),editSnacks.getText().toString(),editDinner.getText().toString());
                         if (isInserted = true)
-                            Toast.makeText(test03.this,"Data Inserted",Toast.LENGTH_LONG).show();
+                            Toast.makeText(test03.this," MealPlan Added",Toast.LENGTH_LONG).show();
                         else
                             Toast.makeText(test03.this,"Data not Inserted",Toast.LENGTH_LONG).show();
 
