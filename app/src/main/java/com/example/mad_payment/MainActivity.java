@@ -40,16 +40,16 @@ public class MainActivity extends AppCompatActivity {
     public void sendMessage(View view) {
         Intent intent = new Intent(this, PaymentEditPage.class);
         EditText editText = (EditText) findViewById(R.id.editText);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message); startActivity(intent);
+        String message1 = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message1); startActivity(intent);
 
         EditText editText2 = (EditText) findViewById(R.id.editText2);
-        String message2 = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message); startActivity(intent);
+        String message2 = editText2.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message2); startActivity(intent);
 
         EditText editText3 = (EditText) findViewById(R.id.editText3);
-        String message3 = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message); startActivity(intent);
+        String message3 = editText3.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message3); startActivity(intent);
 
     }
 

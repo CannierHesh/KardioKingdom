@@ -17,19 +17,19 @@ public class PaymentEditPage extends AppCompatActivity {
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        String message1 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         String message2 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         String message3 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
         // Capture the layout's TextView and set the string as its text
         TextView textView2 = findViewById(R.id.textView2);
-        textView2.setText(message);
+        textView2.setText(message1);
 
         TextView textView7 = findViewById(R.id.textView7);
-        textView7.setText(message);
+        textView7.setText(message2);
 
         TextView textView8 = findViewById(R.id.textView8);
-        textView8.setText(message);
+        textView8.setText(message3);
 
     }
 
