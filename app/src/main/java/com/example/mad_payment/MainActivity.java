@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     TextView cardNo, expiryDate, cvv;
     Button btnSave1, btnEdit, btnRemove, btnSave2;
     DBHandler myDb;
-
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState)
     { super.onCreate(savedInstanceState);
@@ -33,17 +33,24 @@ public class MainActivity extends AppCompatActivity {
         btnRemove= findViewById(R.id.button4);
         btnSave2= findViewById(R.id.button3);
 
-        btnEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                OpenActivity2();
-            }
-        });
+
     }
 
-    public void OpenActivity2(){
-        Intent intent= new Intent(this, PaymentEditPage.class);
-        startActivity(intent);
+    /** Called when the user taps the Send button */
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, PaymentEditPage.class);
+        EditText editText = (EditText) findViewById(R.id.editText);
+        String message = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message); startActivity(intent);
+
+        EditText editText2 = (EditText) findViewById(R.id.editText2);
+        String message2 = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message); startActivity(intent);
+
+        EditText editText3 = (EditText) findViewById(R.id.editText3);
+        String message3 = editText.getText().toString();
+        intent.putExtra(EXTRA_MESSAGE, message); startActivity(intent);
+
     }
 
 
