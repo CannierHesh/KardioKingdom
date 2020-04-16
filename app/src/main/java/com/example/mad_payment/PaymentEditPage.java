@@ -16,20 +16,22 @@ public class PaymentEditPage extends AppCompatActivity {
         setContentView(R.layout.activity_payment_edit_page);
 
         // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
-        String message1 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        String message2 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        String message3 = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        Intent intent1 = getIntent();
+        String message1 = intent1.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        Intent intent2 = getIntent();
+        String message2 = intent2.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        Intent intent3 = getIntent();
+        String message3 = intent3.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
         // Capture the layout's TextView and set the string as its text
+        TextView textView1 = findViewById(R.id.textView1);
+        textView1.setText(message1);
+
         TextView textView2 = findViewById(R.id.textView2);
-        textView2.setText(message1);
+        textView2.setText(message2);
 
-        TextView textView7 = findViewById(R.id.textView7);
-        textView7.setText(message2);
-
-        TextView textView8 = findViewById(R.id.textView8);
-        textView8.setText(message3);
+        TextView textView3 = findViewById(R.id.textView3);
+        textView3.setText(message3);
 
     }
 

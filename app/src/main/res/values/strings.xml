@@ -1,15 +1,13 @@
 <resources>
     <string name="app_name">KardioKingdom</string>
     <string name="todo1">TODO</string>
-    <string name="textview">TextView</string>
-    <string name="expiration_date">Expiration Date</string>
+    <string name="heading">Payment Details</string>
+    <string name="cardNo">Card No</string>
     <string name="cvv">CVV</string>
-    <string name="todo">TODO</string>
-    <string name="btnEdit">Edit Details</string>
-    <string name="Name">Daren Rex</string>
-    <string name="cardNo">Card Number</string>
-    <string name="btnSave">Save</string>
-    <string name="btnRemove">Remove</string>
-    <string name="paymentDetails">Payment Details</string>
+    <string name="expiryDate">Expire Date</string>
+    <string name="save1">Save</string>
+    <string name="save2">Save</string>
+    <string name="remove">Remove</string>
+    <string name="editDetails">Edit</string>
 
 </resources>

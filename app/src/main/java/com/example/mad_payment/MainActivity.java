@@ -26,30 +26,32 @@ public class MainActivity extends AppCompatActivity {
 
         myDb = new DBHandler(this);
         cardNo= findViewById(R.id.editText);
-        expiryDate= findViewById(R.id.editText2);
-        cvv = findViewById(R.id.editText3);
-        btnSave1= findViewById(R.id.button2);
-        btnEdit= findViewById(R.id.button);
-        btnRemove= findViewById(R.id.button4);
-        btnSave2= findViewById(R.id.button3);
+        cvv = findViewById(R.id.editText2);
+        expiryDate= findViewById(R.id.editText3);
+        btnSave1= findViewById(R.id.button3);
+        btnEdit= findViewById(R.id.button4);
+        btnRemove= findViewById(R.id.button7);
+        btnSave2= findViewById(R.id.button8);
 
 
     }
 
     /** Called when the user taps the Send button */
     public void sendMessage(View view) {
-        Intent intent = new Intent(this, PaymentEditPage.class);
+        Intent intent1 = new Intent(this, PaymentEditPage.class);
         EditText editText = (EditText) findViewById(R.id.editText);
         String message1 = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message1); startActivity(intent);
+        intent1.putExtra(EXTRA_MESSAGE, message1); startActivity(intent1);
 
+        Intent intent2 = new Intent(this, PaymentEditPage.class);
         EditText editText2 = (EditText) findViewById(R.id.editText2);
         String message2 = editText2.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message2); startActivity(intent);
+        intent2.putExtra(EXTRA_MESSAGE, message2); startActivity(intent2);
 
+        Intent intent3 = new Intent(this, PaymentEditPage.class);
         EditText editText3 = (EditText) findViewById(R.id.editText3);
         String message3 = editText3.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message3); startActivity(intent);
+        intent3.putExtra(EXTRA_MESSAGE, message3); startActivity(intent3);
 
     }
 
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         btnSave1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(myDb.addInfo(cardNo.getText().toString(), expiryDate.getText().toString(), cvv.getText().toString())){
+                if(myDb.addInfo(cardNo.getText().toString(),cvv.getText().toString(), expiryDate.getText().toString() )){
                     Toast.makeText(MainActivity.this,"Inserted successfully",Toast.LENGTH_LONG).show();
                 } else
                     Toast.makeText(MainActivity.this,"Invalid insert",Toast.LENGTH_LONG).show();
@@ -93,6 +95,13 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
+    public void displayToast(View v) {
+        Toast.makeText(MainActivity.this, "Successfully saved", Toast.LENGTH_SHORT).show();
+    }
+
+    public void displayToast1(View v) {
+        Toast.makeText(MainActivity.this, "Successfully removed", Toast.LENGTH_SHORT).show();
+    }
 }
 
 

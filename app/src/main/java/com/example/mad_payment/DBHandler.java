@@ -36,12 +36,12 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
 
-    public boolean addInfo(String cardNo, String expireDate, String Cvv) {
+    public boolean addInfo(String cardNo, String expireDate, String cvv) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(Col2, cardNo);
-        values.put(Col3, expireDate);
-        values.put(Col4, Cvv);
+        values.put(Col3, cvv);
+        values.put(Col4, expireDate);
         long newRowId = db.insert(Table_Name, null, values);
         if (newRowId == -1) {
             return false;
@@ -69,8 +69,8 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(Col3, expiryDate);
-        values.put(Col4, cvv);
+        values.put(Col3, cvv);
+        values.put(Col4, expiryDate);
         String selection = Col2 + "LIKE ? " ;
         String[] selectionArgs = {cardNo};
         int count = db.update(Table_Name, values,selection, selectionArgs);
