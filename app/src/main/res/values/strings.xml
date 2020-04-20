@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">KardioKingdom</string>
+    <string name="todo1">TODO</string>
+    <string name="heading">Payment Details</string>
+    <string name="cardNo">Card No</string>
+    <string name="cvv">CVV</string>
+    <string name="expiryDate">Expire Date</string>
+    <string name="save1">Save</string>
+    <string name="save2">Save</string>
+    <string name="remove">Remove</string>
+    <string name="editDetails">Edit</string>
+
+</resources>
