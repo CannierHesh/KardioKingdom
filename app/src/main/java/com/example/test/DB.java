@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DB extends SQLiteOpenHelper {
-    public static final String Database_Name = "PaymentInfo.db";
+    public static final String Database_Name = "PaymentInfo.db3";
     public static final String Table_Name = "payment";
     public static final String Col1 = "ID";
     public static final String Col2 = "CardNo";

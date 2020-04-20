@@ -16,7 +16,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     TextView cardNo, expiryDate, cvv;
-    Button btnSave1, btnEdit, btnRemove, btnSave2;
+    Button btnSave1, btnEdit, btnRemove, btnSave2,btnView;
     DB myDb;
     public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         btnEdit = findViewById(R.id.button4);
         btnRemove = findViewById(R.id.button7);
         btnSave2 = findViewById(R.id.button8);
+        btnView = findViewById(R.id.button);
 
 
     }
@@ -47,17 +48,17 @@ public class MainActivity extends AppCompatActivity {
         intent1.putExtra(EXTRA_MESSAGE, message1);
         startActivity(intent1);
 
-        Intent intent2 = new Intent(this, Main2Activity.class);
+
         EditText editText2 = (EditText) findViewById(R.id.editText2);
         String message2 = editText2.getText().toString();
-        intent2.putExtra(EXTRA_MESSAGE, message2);
-        startActivity(intent2);
+        intent1.putExtra(EXTRA_MESSAGE, message2);
+        startActivity(intent1);
 
-       /** Intent intent3 = new Intent(this, Main2Activity.class);
+
         EditText editText3 = (EditText) findViewById(R.id.editText3);
         String message3 = editText3.getText().toString();
-        intent3.putExtra(EXTRA_MESSAGE, message3);
-        startActivity(intent3);**/
+        intent1.putExtra(EXTRA_MESSAGE, message3);
+        startActivity(intent1);
 
     }
 
@@ -77,8 +78,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-        btnSave1.setOnClickListener(new View.OnClickListener() {
+        btnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Cursor newRowId = myDb.readAllInfo();
@@ -100,6 +100,9 @@ public class MainActivity extends AppCompatActivity {
         builder.setMessage("No user available");
         builder.show();
     }
+
+
+
 
     public void displayToast(View v) {
         Toast.makeText(MainActivity.this, "Successfully saved", Toast.LENGTH_SHORT).show();

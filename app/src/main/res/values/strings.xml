@@ -9,5 +9,6 @@
     <string name="save2">Save</string>
     <string name="remove">Remove</string>
     <string name="editDetails">Edit</string>
+    <string name="view">View</string>
 
 </resources>

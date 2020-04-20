@@ -93,9 +93,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="68dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="351dp"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="359dp"
         android:onClick="displayToast"
         android:text="@string/save1" />
 
@@ -106,9 +106,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="216dp"
-        android:layout_marginStart="216dp"
-        android:layout_marginTop="352dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="163dp"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="361dp"
         android:onClick="sendMessage"
         android:text="@string/editDetails" />
 
@@ -144,6 +145,18 @@
         android:ems="10"
         android:hint="@string/cvv"
         android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="282dp"
+        android:layout_marginStart="282dp"
+        android:layout_marginTop="359dp"
+        android:text="@string/view" />
 
 </RelativeLayout>
 

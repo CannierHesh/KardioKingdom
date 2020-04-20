@@ -20,11 +20,11 @@ public class Main2Activity extends AppCompatActivity {
                 Intent intent1 = getIntent();
                 String message1 = intent1.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
-                Intent intent2 = getIntent();
-                String message2 = intent2.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
-                Intent intent3= getIntent();
-                String message3 = intent3.getStringExtra(MainActivity.EXTRA_MESSAGE);
+                String message2 = intent1.getStringExtra(MainActivity.EXTRA_MESSAGE);
+
+
+                String message3 = intent1.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
                 // Capture the layout's TextView and set the string as its text
                 EditText editText4 = findViewById(R.id.editText4);
