@@ -20,30 +20,20 @@ public class test04 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test04);
-        myDb = new DatabaseHelper(this);
 
-        Intent intent = getIntent();
-        String message1 = intent.getStringExtra(Edit.EXTRA_MESSAGE);
-        String message2 = intent.getStringExtra(Edit.EXTRA_MESSAGE);
-        String message3 = intent.getStringExtra(Edit.EXTRA_MESSAGE);
-        String message4 = intent.getStringExtra(Edit.EXTRA_MESSAGE);
-        String message5 = intent.getStringExtra(Edit.EXTRA_MESSAGE);
+        EditText editText_b = (EditText) findViewById(R.id.editText_b);
+        EditText editText_s = (EditText) findViewById(R.id.editText_s);
+        EditText editText_l = (EditText) findViewById(R.id.editText_l);
+        EditText editText_sn = (EditText) findViewById(R.id.editText_sn);
+        EditText editText_d = (EditText) findViewById(R.id.editText_d);
 
-        // Capture the layout's TextView and set the string as its text
-        EditText editText_b = findViewById(R.id.editText_b);
-        editText_b.setText(message1);
+        editText_b.setText(getIntent().getStringExtra("BREAKFAST"));
+        editText_s.setText(getIntent().getStringExtra("SNACK"));
+        editText_l.setText(getIntent().getStringExtra("LUNCH"));
+        editText_sn.setText(getIntent().getStringExtra("SNACKS"));
+        editText_d.setText(getIntent().getStringExtra("DINNER"));
 
-        EditText editText_sn = findViewById(R.id.editText_sn);
-        editText_sn.setText(message2);
 
-        EditText editText_l = findViewById(R.id.editText_l);
-        editText_l.setText(message3);
-
-        EditText editText_s = findViewById(R.id.editText_s);
-        editText_s.setText(message4);
-
-        EditText editText_d = findViewById(R.id.editText_d);
-        editText_d.setText(message5);
 
 
 

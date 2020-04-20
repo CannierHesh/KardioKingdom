@@ -24,7 +24,7 @@ public class Edit extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
-
+        myDb = new DatabaseHelper(this);
         editBreakfast = (EditText)findViewById(R.id.editText_b);
         editSnack = (EditText)findViewById(R.id.editText_sn);
         editLunch = (EditText)findViewById(R.id.editText_l);
@@ -39,34 +39,37 @@ public class Edit extends AppCompatActivity {
         myDb = new DatabaseHelper(this);
         DeleteData();
 
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                editBreakfast = (EditText) findViewById(R.id.editText_b);
+                String message1 = editBreakfast.getText().toString();
+
+                editSnack = (EditText) findViewById(R.id.editText_sn);
+                String message2 = editSnack.getText().toString();
+
+                editLunch = (EditText) findViewById(R.id.editText_l);
+                String message3 = editLunch.getText().toString();
+
+                editSnacks = (EditText) findViewById(R.id.editText_s);
+                String message4 = editSnacks.getText().toString();
+
+                editDinner = (EditText) findViewById(R.id.editText_d);
+                String message5 = editDinner.getText().toString();
+
+                Intent intent = new Intent(Edit.this,test04.class);
+                intent.putExtra("BREAKFAST",message1);
+                intent.putExtra("SNACK",message2);
+                intent.putExtra("LUNCH",message3);
+                intent.putExtra("SNACKS",message4);
+                intent.putExtra("DINNER",message5);
+                startActivity(intent);
+            }
+        });
+
     }
 
-    /** Called when the user taps the Send button */
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, test04.class);
-        EditText editText_b = (EditText) findViewById(R.id.editText_b);
-        String message1 = editText_b.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message1); startActivity(intent);
-
-        EditText editText_sn = (EditText) findViewById(R.id.editText_sn);
-        String message2 = editText_sn.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message2); startActivity(intent);
-
-        EditText editText_l = (EditText) findViewById(R.id.editText_l);
-        String message3 = editText_l.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message3); startActivity(intent);
-
-        EditText editText_s = (EditText) findViewById(R.id.editText_s);
-        String message4 = editText_s.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message4); startActivity(intent);
-
-        EditText editText_d = (EditText) findViewById(R.id.editText_d);
-        String message5 = editText_d.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message5); startActivity(intent);
-
-
-
-    }
 public void DeleteData(){
 
     btnDelete.setOnClickListener(new View.OnClickListener() {

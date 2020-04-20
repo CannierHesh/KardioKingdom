@@ -1,81 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/qqq"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="585dp"
-        android:layout_height="965dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2"
-        app:srcCompat="@drawable/qq" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="147dp"
-        android:layout_height="80dp"
-        android:layout_marginStart="26dp"
-        android:layout_marginLeft="26dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="20dp"
-        android:contentDescription="TODO"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ww" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
-        android:text="@string/User"
-        android:textColor="@android:color/background_light"
-        android:textSize="36sp"
-        android:textStyle="bold|italic"
-        app:fontFamily="sans-serif-condensed"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
-
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Meal Plans"
-        android:textColor="@android:color/background_light"
-        android:textSize="24sp"
-        app:fontFamily="sans-serif-condensed-medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginRight="96dp"
-        android:background="?attr/actionMenuTextColor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_delete"
-        tools:srcCompat="@android:drawable/ic_delete" />
 
     <Button
         android:id="@+id/button3"
@@ -90,27 +22,21 @@
         app:layout_constraintEnd_toStartOf="@+id/imageButton2"
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.428">
-
-
-    </LinearLayout>
-
     <TextView
-        android:id="@+id/txt"
+        android:id="@+id/textView8"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="28dp" />
+        android:layout_height="114dp"
+        android:baselineAligned="false"
+        android:textColor="@android:color/background_light"
+        android:textSize="36sp" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="425dp">
+
+
+    </ListView>
 
     <Button
         android:id="@+id/button_add"
@@ -119,20 +45,14 @@
         android:layout_height="57dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:background="?attr/actionMenuTextColor"
+        android:background="@android:color/background_dark"
         android:text="@string/addE"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.982" />
+        android:textStyle="italic" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
 
 
