@@ -9,12 +9,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
 
 public class test03 extends AppCompatActivity {
 
     DatabaseHelper myDb;
     EditText editBreakfast,editSnack,editLunch,editSnacks,editDinner;
     Button btnAdd;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +45,7 @@ public class test03 extends AppCompatActivity {
                         else
                             Toast.makeText(test03.this,"Data not Inserted",Toast.LENGTH_LONG).show();
 
+
                         Intent intent = new Intent(test03.this,MainActivity.class);
                         startActivity(intent);
                     }
@@ -49,5 +54,7 @@ public class test03 extends AppCompatActivity {
 
 
     }
+
+
 
 }

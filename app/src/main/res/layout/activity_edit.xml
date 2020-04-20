@@ -213,13 +213,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/button_Edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
         android:layout_marginBottom="16dp"
         android:background="@android:color/background_dark"
+        android:onClick="sendMessage"
         android:text="@string/button2"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"

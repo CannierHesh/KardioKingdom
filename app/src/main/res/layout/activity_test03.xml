@@ -142,6 +142,7 @@
         android:layout_marginLeft="160dp"
         android:layout_marginBottom="16dp"
         android:background="@android:color/background_dark"
+
         android:text="@string/button"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
