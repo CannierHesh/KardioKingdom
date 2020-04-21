@@ -16,11 +16,15 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="68dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="290dp"
+        android:layout_marginLeft="77dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="276dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="@string/cvv"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="@android:color/background_light" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -39,30 +43,6 @@
         android:layout_marginTop="378dp"
         app:srcCompat="@drawable/logo" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="71dp"
-        android:layout_height="103dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="209dp"
-        android:layout_marginRight="209dp"
-        android:layout_marginTop="76dp"
-        app:srcCompat="@drawable/aa" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="63dp"
-        android:layout_height="55dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="262dp"
-        android:layout_marginStart="262dp"
-        android:layout_marginTop="99dp"
-        app:srcCompat="@drawable/nn" />
-
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
@@ -70,35 +50,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="100dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/heading"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="11dp"
+        android:text="@string/editPayments"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold" />
-
-    <RadioButton
-        android:id="@+id/radioButton5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="286dp"
-        android:layout_marginRight="286dp"
-        android:layout_marginTop="112dp" />
-
-    <RadioButton
-        android:id="@+id/radioButton6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="229dp"
-        android:layout_marginStart="229dp"
-        android:layout_marginTop="109dp" />
 
     <Button
         android:id="@+id/button7"
@@ -108,9 +67,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="75dp"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="337dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="340dp"
         android:text="@string/save2" />
 
     <Button
@@ -121,9 +80,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="244dp"
-        android:layout_marginStart="244dp"
-        android:layout_marginTop="338dp"
+        android:layout_marginLeft="207dp"
+        android:layout_marginStart="207dp"
+        android:layout_marginTop="340dp"
         android:text="@string/remove" />
 
     <EditText
@@ -134,7 +93,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="180dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="@string/cardNo"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@android:color/background_light" />
 
     <EditText
         android:id="@+id/editText5"
@@ -142,9 +104,42 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="231dp"
+        android:layout_marginTop="228dp"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:hint="@string/expiryDate"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@android:color/background_light" />
+
+    <EditText
+        android:id="@+id/editText8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="85dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="58dp"
+        android:ems="10"
+        android:hint="@string/cardHolder"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="@android:color/background_light" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="154dp"
+        android:layout_marginRight="154dp"
+        android:layout_marginTop="107dp"
+        android:text="@string/search" />
 
 
 </RelativeLayout>

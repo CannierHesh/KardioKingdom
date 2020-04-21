@@ -5,75 +5,154 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.BaseColumns;
 
-import androidx.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class DB extends SQLiteOpenHelper {
-    public static final String Database_Name = "PaymentInfo.db3";
-    public static final String Table_Name = "payment";
-    public static final String Col1 = "ID";
-    public static final String Col2 = "CardNo";
-    public static final String Col3 = "ExpirationDate";
-    public static final String Col4 = "CVV";
-    public static final String Col5 = "Type";
+class DB extends SQLiteOpenHelper {
 
-    public DB(@Nullable Context context) {
-        super(context, Database_Name, null, 1);
+    // If you change the database schema, you must increment the database version.
+    public static final int DATABASE_VERSION = 1;
+    public static final String DATABASE_NAME = "PaymentDB.db";
+
+    public DB(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-
-    @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + Table_Name + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, CardNo TEXT , ExpirationDate TEXT , CVV TEXT)");
+        db.execSQL(SQL_CREATE_ENTRIES);
     }
-
-
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-
-        db.execSQL("DROP TABLE IF EXISTS " + Table_Name);
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // This database is only a cache for online data, so its upgrade policy is
+        // to simply to discard the data and start over
+        db.execSQL(SQL_DELETE_ENTRIES);
         onCreate(db);
     }
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        onUpgrade(db, oldVersion, newVersion);
+    }
 
+    private static final String SQL_CREATE_ENTRIES =
+            "CREATE TABLE " + PProfile.Payments.TABLE_NAME + " (" +
+                    PProfile.Payments._ID + " INTEGER PRIMARY KEY," +
+                    PProfile.Payments.COLUMN_1 + " TEXT," +
+                    PProfile.Payments.COLUMN_2 + " TEXT," +
+                    PProfile.Payments.COLUMN_3 + " TEXT," +
+                    PProfile.Payments.COLUMN_4 + " TEXT)";
 
-    public boolean addInfo(String cardNo, String expireDate, String cvv) {
-        SQLiteDatabase db = this.getWritableDatabase();
+    private static final String SQL_DELETE_ENTRIES =
+            "DROP TABLE IF EXISTS " + PProfile.Payments.TABLE_NAME;
+
+    public long addInfo (String holdername, String cardnum, String exdate, String cvvnum){
+        // Gets the data repository in write mode
+        SQLiteDatabase db = getWritableDatabase();
+
+        // Create a new map of values, where column names are the keys
         ContentValues values = new ContentValues();
-        values.put(Col2, cardNo);
-        values.put(Col3, cvv);
-        values.put(Col4, expireDate);
-        long newRowId = db.insert(Table_Name, null, values);
-        if (newRowId == -1) {
-            return false;
-        } else
+        values.put(PProfile.Payments.COLUMN_1, holdername);
+        values.put(PProfile.Payments.COLUMN_2,  cardnum);
+        values.put(PProfile.Payments.COLUMN_3, exdate);
+        values.put(PProfile.Payments.COLUMN_4, cvvnum);
+
+        // Insert the new row, returning the primary key value of the new row
+        long newRowId = db.insert(PProfile.Payments.TABLE_NAME, null, values);
+
+        return newRowId;
+
+    }
+
+    public Boolean updateInfo (String holdername, String cardnum, String exdate, String cvvnum){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        // New value for one column
+        ContentValues values = new ContentValues();
+        values.put(PProfile.Payments.COLUMN_2, cardnum);
+        values.put(PProfile.Payments.COLUMN_3, exdate);
+        values.put(PProfile.Payments.COLUMN_4, cvvnum);
+
+        // Which row to update, based on the title
+        String selection = PProfile.Payments.COLUMN_1 + " LIKE ?";
+        String[] selectionArgs = { holdername };
+
+        int count = db.update(
+                PProfile.Payments.TABLE_NAME,
+                values,
+                selection,
+                selectionArgs);
+
+        if (count >=1 ) {
             return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    public void deleteInfo (String holdername){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        // Define 'where' part of query.
+        String selection = PProfile.Payments.COLUMN_1 + " LIKE ?";
+        // Specify arguments in placeholder order.
+        String[] selectionArgs = { holdername };
+        // Issue SQL statement.
+        int deletedRows = db.delete(PProfile.Payments.TABLE_NAME, selection, selectionArgs);
+
+
     }
 
 
-    public Cursor readAllInfo() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor= db.rawQuery("SELECT * FROM " + Table_Name, null);
-        return cursor;
+
+    public List readAllInfo (String holdername){
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        // Define a projection that specifies which columns from the database
+        // you will actually use after this query.
+        String[] projection = {
+                BaseColumns._ID,
+                PProfile.Payments.COLUMN_1,
+                PProfile.Payments.COLUMN_2,
+                PProfile.Payments.COLUMN_3,
+                PProfile.Payments.COLUMN_4
+        };
+
+        // Filter results WHERE "title" = 'My Title'
+        String selection = PProfile.Payments.COLUMN_1 + " LIKE ?";
+        String[] selectionArgs = { holdername };
+
+        // How you want the results sorted in the resulting Cursor
+        String sortOrder =
+                PProfile.Payments.COLUMN_1 + " ASC";
+
+        Cursor cursor = db.query(
+                PProfile.Payments.TABLE_NAME,   // The table to query
+                projection,             // The array of columns to return (pass null to get all)
+                selection,              // The columns for the WHERE clause
+                selectionArgs,          // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                sortOrder               // The sort order
+        );
+
+        List PaymenetDet = new ArrayList<>();
+        while(cursor.moveToNext()) {
+            String hname = cursor.getString(cursor.getColumnIndexOrThrow(PProfile.Payments.COLUMN_1));
+            String cardno = cursor.getString(cursor.getColumnIndexOrThrow(PProfile.Payments.COLUMN_2));
+            String edate = cursor.getString(cursor.getColumnIndexOrThrow(PProfile.Payments.COLUMN_3));
+            String cvvno = cursor.getString(cursor.getColumnIndexOrThrow(PProfile.Payments.COLUMN_4));
+            PaymenetDet.add(hname);//0
+            PaymenetDet.add(cardno);//1
+            PaymenetDet.add(edate);//2
+            PaymenetDet.add(cvvno);//3
+        }
+        cursor.close();
+        return PaymenetDet;
     }
 
-
-    public void deleteInfo(String cardNo){
-        SQLiteDatabase db =getReadableDatabase();
-        String selection = Col2 + "LIKE ? " ;
-        String[] selectionArgs = {cardNo};
-        db.delete(Table_Name, selection,selectionArgs);
-    }
-
-
-    public void updateInfo(String cardNo, String expiryDate , String cvv){
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(Col3, cvv);
-        values.put(Col4, expiryDate);
-        String selection = Col2 + "LIKE ? " ;
-        String[] selectionArgs = {cardNo};
-        int count = db.update(Table_Name, values,selection, selectionArgs);
-    }
 
 
 }
