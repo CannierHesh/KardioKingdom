@@ -22,9 +22,9 @@ public class test04 extends AppCompatActivity {
         setContentView(R.layout.activity_test04);
 
         EditText editText_b = (EditText) findViewById(R.id.editText_b);
-        EditText editText_s = (EditText) findViewById(R.id.editText_s);
+        EditText editText_s = (EditText) findViewById(R.id.editText_sn);
         EditText editText_l = (EditText) findViewById(R.id.editText_l);
-        EditText editText_sn = (EditText) findViewById(R.id.editText_sn);
+        EditText editText_sn = (EditText) findViewById(R.id.editText_s);
         EditText editText_d = (EditText) findViewById(R.id.editText_d);
 
         editText_b.setText(getIntent().getStringExtra("BREAKFAST"));

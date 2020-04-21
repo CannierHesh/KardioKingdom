@@ -18,6 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_4 = "LUNCH";
     public static final String COL_5 = "SNACKS";
     public static final String COL_6 = "DINNER";
+
     public DatabaseHelper( Context context) {
         super(context, DATABASE_NAME, null, 1);
 
@@ -60,7 +61,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 public Integer deleteData (String id){
     SQLiteDatabase db = this.getWritableDatabase();
-    return db.delete(TABLE_NAME,"ID = ?",new String[] {id});
+    return db.delete(TABLE_NAME,"ID",new String[] {id});
 }
 ///// UPDATE
 
@@ -78,6 +79,16 @@ public Integer deleteData (String id){
         String[] selectionArgs = {id};
         int count = db.update(TABLE_NAME, Values,selection, selectionArgs);
 
+
+    }
+    ////GET
+
+    public Cursor getItemId(String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_2 +" = '" + name + "'" ;
+
+        Cursor data = db.rawQuery(query, null);
+        return data;
 
     }
 }

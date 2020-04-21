@@ -16,6 +16,8 @@ public class Edit extends AppCompatActivity {
     EditText editBreakfast,editSnack,editLunch,editSnacks,editDinner;
     Button btnDelete;
     Button btnEdit;
+    private int selectedID;
+    private String selectedName;
     public static final String EXTRA_MESSAGE = "com.example.gittest.MESSAGE";
 
 
@@ -30,6 +32,24 @@ public class Edit extends AppCompatActivity {
         editLunch = (EditText)findViewById(R.id.editText_l);
         editSnacks = (EditText)findViewById(R.id.editText_s);
         editDinner = (EditText)findViewById(R.id.editText_d);
+
+        //GET
+        Intent receivedIntent = getIntent();
+        selectedID = receivedIntent.getIntExtra("id",-1);
+        selectedName= receivedIntent.getStringExtra("breakfast");
+        editBreakfast.setText(selectedName);
+
+        selectedName= receivedIntent.getStringExtra("snack");
+        editSnack.setText(selectedName);
+
+        selectedName= receivedIntent.getStringExtra("lunch");
+        editLunch.setText(selectedName);
+
+        selectedName= receivedIntent.getStringExtra("snacks");
+        editSnacks.setText(selectedName);
+
+        selectedName= receivedIntent.getStringExtra("dinner");
+        editDinner.setText(selectedName);
 
         //DELETE
 
