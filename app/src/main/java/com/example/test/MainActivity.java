@@ -15,10 +15,10 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView cardNo, expiryDate, cvv;
+    EditText cardNo, expiryDate, cvv;
     Button btnSave1, btnEdit, btnRemove, btnSave2,btnView;
     DB myDb;
-    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+    String description= "com.example.myfirstapp.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,36 +29,35 @@ public class MainActivity extends AppCompatActivity {
         cardNo = findViewById(R.id.editText);
         cvv = findViewById(R.id.editText2);
         expiryDate = findViewById(R.id.editText3);
-        btnSave1 = findViewById(R.id.button3);
-        btnEdit = findViewById(R.id.button4);
-        btnRemove = findViewById(R.id.button7);
-        btnSave2 = findViewById(R.id.button8);
-        btnView = findViewById(R.id.button);
+        btnSave1 = (Button) findViewById(R.id.button3);
+        btnEdit = (Button) findViewById(R.id.button4);
+        btnRemove = (Button) findViewById(R.id.button7);
+        btnSave2 = (Button) findViewById(R.id.button8);
+        btnView = (Button) findViewById(R.id.button);
 
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-    }
+                    cardNo = (EditText) findViewById(R.id.editText);
+                    String message1 = cardNo.getText().toString();
 
-    /**
-     * Called when the user taps the Send button
-     */
-    public void sendMessage(View view) {
-        Intent intent1 = new Intent(this, Main2Activity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        String message1 = editText.getText().toString();
-        intent1.putExtra(EXTRA_MESSAGE, message1);
-        startActivity(intent1);
+                    cvv = (EditText) findViewById(R.id.editText2);
+                    String message2 = cvv.getText().toString();
 
+                    expiryDate = (EditText) findViewById(R.id.editText3);
+                    String message3 = expiryDate.getText().toString();
 
-        EditText editText2 = (EditText) findViewById(R.id.editText2);
-        String message2 = editText2.getText().toString();
-        intent1.putExtra(EXTRA_MESSAGE, message2);
-        startActivity(intent1);
+                    Intent intent = new Intent(MainActivity.this, Main2Activity.class);
+                    intent.putExtra("DESCRIPTION", description);
+                    intent.putExtra("NAME1", message1);
+                    intent.putExtra("NAME2", message2);
+                    intent.putExtra("NAME3", message3);
+                    startActivity(intent);
 
+                }
+        });
 
-        EditText editText3 = (EditText) findViewById(R.id.editText3);
-        String message3 = editText3.getText().toString();
-        intent1.putExtra(EXTRA_MESSAGE, message3);
-        startActivity(intent1);
 
     }
 
@@ -75,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this,"Invalid insert",Toast.LENGTH_LONG).show();
 
             }
+
+
         });
 
 

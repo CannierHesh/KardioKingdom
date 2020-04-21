@@ -15,6 +15,7 @@ public class DB extends SQLiteOpenHelper {
     public static final String Col2 = "CardNo";
     public static final String Col3 = "ExpirationDate";
     public static final String Col4 = "CVV";
+    public static final String Col5 = "Type";
 
     public DB(@Nullable Context context) {
         super(context, Database_Name, null, 1);

@@ -111,7 +111,6 @@
         android:layout_marginLeft="75dp"
         android:layout_marginStart="75dp"
         android:layout_marginTop="337dp"
-        android:onClick="displayToast"
         android:text="@string/save2" />
 
     <Button
@@ -125,7 +124,6 @@
         android:layout_marginLeft="244dp"
         android:layout_marginStart="244dp"
         android:layout_marginTop="338dp"
-        android:onClick="displayToast1"
         android:text="@string/remove" />
 
     <EditText

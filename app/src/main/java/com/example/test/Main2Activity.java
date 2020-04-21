@@ -11,32 +11,20 @@ import android.widget.Toast;
 
 public class Main2Activity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.activity_main2);
 
-                // Get the Intent that started this activity and extract the string
-                Intent intent1 = getIntent();
-                String message1 = intent1.getStringExtra(MainActivity.EXTRA_MESSAGE);
+                EditText editText4 = (EditText) findViewById(R.id.editText4);
+                EditText editText5 = (EditText) findViewById(R.id.editText5);
+                EditText editText6 = (EditText) findViewById(R.id.editText6);
 
-
-                String message2 = intent1.getStringExtra(MainActivity.EXTRA_MESSAGE);
-
-
-                String message3 = intent1.getStringExtra(MainActivity.EXTRA_MESSAGE);
-
-                // Capture the layout's TextView and set the string as its text
-                EditText editText4 = findViewById(R.id.editText4);
-                editText4.setText(message1);
-
-                EditText editText5 = findViewById(R.id.editText5);
-                editText4.setText(message2);
-
-                EditText editText6 = findViewById(R.id.editText6);
-                editText4.setText(message3);
-
-
+                editText4.setText(getIntent().getStringExtra("NAME1"));
+                editText5.setText(getIntent().getStringExtra("NAME2"));
+                editText6.setText(getIntent().getStringExtra("NAME3"));
 
     }
 
