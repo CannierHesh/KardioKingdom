@@ -5,7 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.nfc.Tag;
+import android.util.Log;
 
+import static android.content.ContentValues.TAG;
 import static android.icu.text.MessagePattern.ArgType.SELECT;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -59,33 +62,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 ///// DELETE
 
-public Integer deleteData (String id){
-    SQLiteDatabase db = this.getWritableDatabase();
-    return db.delete(TABLE_NAME,"ID",new String[] {id});
-}
+    public Integer deleteData(String breakfast){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, "BREAKFAST = ?",new String[] {breakfast} );
+    }
+
 ///// UPDATE
 
-    public void updateData(String id,String breakfast,String snack,String lunch,String snacks,String dinner){
+    public void updateName(String newName,int id,String oldName){
         SQLiteDatabase db = this.getWritableDatabase();
 
-        ContentValues Values = new ContentValues();
-
-        Values.put(COL_2,breakfast);
-        Values.put(COL_3,snack);
-        Values.put(COL_4,lunch);
-        Values.put(COL_5,snacks);
-        Values.put(COL_6,dinner);
-        String selection = COL_1+ "LIKE ? " ;
-        String[] selectionArgs = {id};
-        int count = db.update(TABLE_NAME, Values,selection, selectionArgs);
-
-
+        String query = " UPDATE " + TABLE_NAME + " SET " + COL_2 +" = '" + newName + "' WHERE " + COL_1 + " = '" + id + "'" + "AND" + COL_2 + " = '" + oldName + "'" ;
+        Log.d(TAG,"update name: query: "+query);
+        Log.d(TAG,"update name: setting name to: "+newName);
+        db.execSQL(query);
     }
     ////GET
 
-    public Cursor getItemId(String name){
+    public Cursor getItemId(String breakfast){
         SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_2 +" = '" + name + "'" ;
+        String query = "SELECT * FROM " + TABLE_NAME + " WHERE " + COL_2 +" = '" + breakfast + "'" ;
 
         Cursor data = db.rawQuery(query, null);
         return data;

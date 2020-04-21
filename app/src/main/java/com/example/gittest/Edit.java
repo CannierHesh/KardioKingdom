@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import static android.os.Build.ID;
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class Edit extends AppCompatActivity {
@@ -55,9 +56,10 @@ public class Edit extends AppCompatActivity {
 
         btnDelete = (Button)findViewById(R.id.button_Delete);
         btnEdit = (Button)findViewById(R.id.button_Edit);
+        DeleteData();
 
         myDb = new DatabaseHelper(this);
-        DeleteData();
+
 
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,25 +87,36 @@ public class Edit extends AppCompatActivity {
                 intent.putExtra("SNACKS",message4);
                 intent.putExtra("DINNER",message5);
                 startActivity(intent);
+
             }
         });
 
+
+    }
+    public void DeleteData(){
+        btnDelete.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Integer deleteRows = myDb.deleteData(editBreakfast.getText().toString());
+                        if(deleteRows > 0) {
+                            Toast.makeText(Edit.this, "Data Deleted !!", Toast.LENGTH_SHORT).show();
+
+                            Intent intent = new Intent(Edit.this,MainActivity.class);
+                            startActivity(intent);
+                        }
+
+                        else
+                            Toast.makeText(Edit.this, "Data not Deleted !!", Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }
+
+
+        );
     }
 
-public void DeleteData(){
 
-    btnDelete.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            Integer deleteRows = myDb.deleteData(editBreakfast.getText().toString());
-            if (deleteRows >0)
-
-                    Toast.makeText(Edit.this," MealPlan Deleted",Toast.LENGTH_LONG).show();
-                else
-                    Toast.makeText(Edit.this,"Data not Deleted",Toast.LENGTH_LONG).show();
-
-        }
-    });
-}
 
 }

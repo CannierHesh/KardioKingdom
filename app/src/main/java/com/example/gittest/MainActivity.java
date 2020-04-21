@@ -44,14 +44,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button = (Button) findViewById(R.id.button3);
-        Button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Edit.class);
-                startActivity(intent);
-            }
-        });
+
 ///////////////////////////// VIEW
                     }
            private void populateListView()      {
