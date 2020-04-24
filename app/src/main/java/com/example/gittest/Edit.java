@@ -102,6 +102,7 @@ public class Edit extends AppCompatActivity {
                         if(deleteRows > 0) {
                             Toast.makeText(Edit.this, "Data Deleted !!", Toast.LENGTH_SHORT).show();
 
+
                             Intent intent = new Intent(Edit.this,MainActivity.class);
                             startActivity(intent);
                         }

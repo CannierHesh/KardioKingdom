@@ -68,15 +68,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 ///// UPDATE
+public boolean updateData(String breakfast,String snack,String lunch,String snacks,String dinner){
+    SQLiteDatabase db = this.getWritableDatabase();
+    ContentValues contentValues = new ContentValues();
+    contentValues.put(COL_2,breakfast);
+    contentValues.put(COL_3,snack);
+    contentValues.put(COL_4,lunch);
+    contentValues.put(COL_5,snacks);
+    contentValues.put(COL_6,dinner);
+    db.update(TABLE_NAME, contentValues,"BREAKFAST = ?",new String[] {breakfast} );
+    return true;
 
-    public void updateName(String newName,int id,String oldName){
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        String query = " UPDATE " + TABLE_NAME + " SET " + COL_2 +" = '" + newName + "' WHERE " + COL_1 + " = '" + id + "'" + "AND" + COL_2 + " = '" + oldName + "'" ;
-        Log.d(TAG,"update name: query: "+query);
-        Log.d(TAG,"update name: setting name to: "+newName);
-        db.execSQL(query);
-    }
+}
     ////GET
 
     public Cursor getItemId(String breakfast){
