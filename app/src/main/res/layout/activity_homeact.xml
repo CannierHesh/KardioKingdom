@@ -11,11 +11,14 @@
         android:id="@+id/imageView"
         android:layout_width="500dp"
         android:layout_height="400dp"
-        android:layout_marginBottom="448dp"
+        android:layout_marginBottom="444dp"
         android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/logo" />
 
     <TextView
@@ -167,7 +170,7 @@
         app:srcCompat="@drawable/pw" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/regbtn"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="120dp"
         android:layout_height="30dp"
@@ -206,7 +209,7 @@
         app:layout_constraintVertical_bias="0.96" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/reglogin"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -226,7 +229,7 @@
         app:layout_constraintVertical_bias="0.985" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/regusername"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -250,7 +253,7 @@
         app:layout_constraintVertical_bias="0.46" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/regemail"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -274,7 +277,7 @@
         app:layout_constraintVertical_bias="0.607" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/regpassword"
         style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -295,6 +298,8 @@
         app:layout_constraintHorizontal_bias="0.308"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.754" />
+        app:layout_constraintVertical_bias="0.754"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/colorAccent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
