@@ -42,6 +42,7 @@
             android:textColor="@android:color/background_light"
             android:textColorHint="@android:color/background_light"
             android:textSize="36sp"
+            android:textStyle="italic"
             app:fontFamily="sans-serif-condensed-medium" />
 
         <ListView

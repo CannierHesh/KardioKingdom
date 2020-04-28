@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -61,16 +62,31 @@ public class test04 extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isUpdated = myDb.updateData(editTextb.getText().toString(),editTexts.getText().toString(),editTextl.getText().toString(),editTextsn.getText().toString(),editTextd.getText().toString());
-                        if(isUpdated == true) {
-                            Toast.makeText(test04.this, "Your Meal plan Updated", Toast.LENGTH_LONG).show();
+                        if (TextUtils.isEmpty(editTextb.getText())) {
+                            editTextb.setError("Please Add a Breakfast");
+                            editTextb.requestFocus();
+                        } else if (TextUtils.isEmpty(editTexts.getText())) {
+                            editTexts.setError("Please Add a Snack");
+                            editTexts.requestFocus();
+                        } else if (TextUtils.isEmpty(editTextl.getText())) {
+                            editTextl.setError("Please Add a Lunch");
+                            editTextl.requestFocus();
+                        } else if (TextUtils.isEmpty(editTextsn.getText())) {
+                            editTextsn.setError("Please Add a Snack");
+                            editTextsn.requestFocus();
+                        } else if (TextUtils.isEmpty(editTextd.getText())) {
+                            editTextd.setError("Please Add a Dinner");
+                            editTextd.requestFocus();
+                        } else {
+                            boolean isUpdated = myDb.updateData(editTextb.getText().toString(), editTexts.getText().toString(), editTextl.getText().toString(), editTextsn.getText().toString(), editTextd.getText().toString());
+                            if (isUpdated == true) {
+                                Toast.makeText(test04.this, "Your Meal plan Updated", Toast.LENGTH_LONG).show();
 
-                            Intent intent = new Intent(test04.this, MainActivity.class);
-                            startActivity(intent);
+                                Intent intent = new Intent(test04.this, MainActivity.class);
+                                startActivity(intent);
+                            } else
+                                Toast.makeText(test04.this, "Data not Updated!", Toast.LENGTH_SHORT).show();
                         }
-
-                        else
-                            Toast.makeText(test04.this, "Data not Updated!", Toast.LENGTH_SHORT).show();
                     }
                 }
         );

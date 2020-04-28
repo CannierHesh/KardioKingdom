@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,15 +40,37 @@ public class test03 extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Boolean isInserted = myDb.insertData(editBreakfast.getText().toString(),editSnack.getText().toString(),editLunch.getText().toString(),editSnacks.getText().toString(),editDinner.getText().toString());
-                        if (isInserted = true)
-                            Toast.makeText(test03.this," MealPlan Added",Toast.LENGTH_LONG).show();
-                        else
-                            Toast.makeText(test03.this,"Data not Inserted",Toast.LENGTH_LONG).show();
+                        if(TextUtils.isEmpty(editBreakfast.getText())){
+                            editBreakfast.setError("Please Add a Breakfast");
+                            editBreakfast.requestFocus();
+                        }
+                        else if(TextUtils.isEmpty(editSnack.getText())){
+                            editSnack.setError("Please Add a Snack");
+                            editSnack.requestFocus();
+                        }
+                        else if(TextUtils.isEmpty(editLunch.getText())){
+                            editLunch.setError("Please Add a lunch");
+                            editLunch.requestFocus();
+                        }
+                        else if(TextUtils.isEmpty(editSnacks.getText())){
+                            editSnacks.setError("Please Add a Snack");
+                            editSnacks.requestFocus();
+                        }
+                        else if(TextUtils.isEmpty(editDinner.getText())){
+                            editDinner.setError("Please Add a Dinner");
+                            editDinner.requestFocus();
+                        }
+                        else{
+                            Boolean isInserted = myDb.insertData(editBreakfast.getText().toString(), editSnack.getText().toString(), editLunch.getText().toString(), editSnacks.getText().toString(), editDinner.getText().toString());
+                            if (isInserted = true)
+                                Toast.makeText(test03.this, " MealPlan Added", Toast.LENGTH_LONG).show();
+                            else
+                                Toast.makeText(test03.this, "Data not Inserted", Toast.LENGTH_LONG).show();
 
 
-                        Intent intent = new Intent(test03.this,MainActivity.class);
-                        startActivity(intent);
+                            Intent intent = new Intent(test03.this, MainActivity.class);
+                            startActivity(intent);
+                        }
                     }
                 }
         );
