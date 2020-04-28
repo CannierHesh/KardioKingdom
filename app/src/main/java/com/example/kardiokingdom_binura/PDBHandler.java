@@ -71,13 +71,16 @@ public class PDBHandler extends SQLiteOpenHelper {
 
 ///// UPDATE
 
-    public void updateName(String newName,int id,String oldName){
+    public boolean updateData(String exercise,String description,String workout,String rest,String round) {
         SQLiteDatabase db = this.getWritableDatabase();
-
-        String query = " UPDATE " + TABLE_NAME + " SET " + COL_2 +" = '" + newName + "' WHERE " + COL_1 + " = '" + id + "'" + "AND" + COL_2 + " = '" + oldName + "'" ;
-        Log.d(TAG,"update name: query: "+query);
-        Log.d(TAG,"update name: setting name to: "+newName);
-        db.execSQL(query);
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_2, exercise);
+        contentValues.put(COL_3, description);
+        contentValues.put(COL_4, workout);
+        contentValues.put(COL_5, rest);
+        contentValues.put(COL_6, round);
+        db.update(TABLE_NAME, contentValues, "EXERCISE = ?", new String[]{exercise});
+        return true;
     }
     ////GET
 

@@ -87,7 +87,7 @@
         android:layout_height="30dp"
         android:background="@drawable/buttonshape2"
         android:gravity="center|top"
-        android:text="@string/save"
+        android:text="edit"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"
         android:textSize="20sp"

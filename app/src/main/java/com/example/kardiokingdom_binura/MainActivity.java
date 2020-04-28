@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mListView = (ListView) findViewById(R.id.viewall);
+        mListView = (ListView) findViewById(R.id.listView);
         myDb = new PDBHandler(this);
 
         populateListView();
@@ -68,27 +68,27 @@ public class MainActivity extends AppCompatActivity {
 
                 Cursor data = myDb.getItemId(name);
                 int itemID = -1;
-                String snack = "";
-                String lunch ="";
-                String snacks ="";
-                String dinner ="";
+                String description = "";
+                String workout ="";
+                String rest ="";
+                String round ="";
                 while (data.moveToNext()) {
                     itemID = data.getInt(0);
-                    snack = data.getString(2);
-                    lunch = data.getString(3);
-                    snacks = data.getString(4);
-                    dinner = data.getString(5);
+                    description = data.getString(2);
+                    workout = data.getString(3);
+                    rest = data.getString(4);
+                    round = data.getString(5);
 
                 }
                 if(itemID > -1){
                     Log.d(TAG,"onItemClick:The ID is." + itemID);
-                    Intent editScreenIntent = new Intent(MainActivity.this,viewall.class);
+                    Intent editScreenIntent = new Intent(MainActivity.this,editexercise.class);
                     editScreenIntent.putExtra("id",itemID);
-                    editScreenIntent.putExtra("breakfast",name);
-                    editScreenIntent.putExtra("snack",snack);
-                    editScreenIntent.putExtra("lunch",lunch);
-                    editScreenIntent.putExtra("snacks",snacks);
-                    editScreenIntent.putExtra("dinner",dinner);
+                    editScreenIntent.putExtra("exercise",name);
+                    editScreenIntent.putExtra("description",description);
+                    editScreenIntent.putExtra("workout",workout);
+                    editScreenIntent.putExtra("rest",rest);
+                    editScreenIntent.putExtra("round",round);
                     startActivity(editScreenIntent);
                 }
                 else {
