@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".userinformation"></activity>
-        <activity android:name=".userprofile" />
         <activity android:name=".homepage" />
         <activity android:name=".login" />
-        <activity android:name=".homeact" />
+        <activity android:name=".register" />
+
+        <activity android:name=".UserFragment" />
+        <activity android:name=".HomeFragment" />
+        <activity android:name=".MusicFragment"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

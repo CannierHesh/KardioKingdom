@@ -9,10 +9,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class homeact extends AppCompatActivity {
+public class register extends AppCompatActivity {
 
 
-    DatabaseHelper db;
+    LoginDatabaseHelper db;
     EditText mTextUsername;
     EditText mTextEmail;
     EditText mTextPassword;
@@ -22,9 +22,9 @@ public class homeact extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homeact);
+        setContentView(R.layout.activity_register);
 
-        db = new DatabaseHelper(this);
+        db = new LoginDatabaseHelper(this);
 
         mTextUsername = (EditText)findViewById(R.id.regusername);
         mTextEmail = (EditText)findViewById(R.id.regemail);
@@ -35,7 +35,7 @@ public class homeact extends AppCompatActivity {
         mTextLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(homeact.this, login.class);
+                Intent i = new Intent(register.this, login.class);
                 startActivity(i);
             }
         });
@@ -48,16 +48,16 @@ public class homeact extends AppCompatActivity {
                 String pwd = mTextPassword.getText().toString().trim();
 
                 if(pwd == null){
-                    Toast.makeText(homeact.this, "Registration Error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(register.this, "Registration Error", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     long val = db.addUser(user,email,pwd);
                     if (val > 0) {
-                        Toast.makeText(homeact.this, "Registration Success", Toast.LENGTH_SHORT).show();
-                        Intent moveToLogin = new Intent(homeact.this,login.class);
+                        Toast.makeText(register.this, "Registration Success", Toast.LENGTH_SHORT).show();
+                        Intent moveToLogin = new Intent(register.this,login.class);
                         startActivity(moveToLogin);
                     } else{
-                        Toast.makeText(homeact.this, "Registration Error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(register.this, "Registration Error", Toast.LENGTH_SHORT).show();
                     }
 
 

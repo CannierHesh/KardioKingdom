@@ -34,6 +34,16 @@
     <string name="username">Username</string>
     <string name="register">Register</string>
     <string name="back_to_login">Back to Login</string>
+    <string name="settings">settings</string>
+    <string name="Settings">Settings</string>
+    <string name="Exercises">Exercises</string>
+    <string name="Meal">Meal</string>
+    <string name="Payment">Payment</string>
+    <string name="usericon">usericon</string>
+    <string name="logout">Logout</string>
+    <string name="Music">Music</string>
+    <string name="SongName">Starboy ft. Daft Punk</string>
+    <string name="artist">The Weekend</string>
 
 
 </resources>

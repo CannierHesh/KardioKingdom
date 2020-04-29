@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class LoginDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String  DATABASE_NAME = "database.db";
     public static final String  TABLE_NAME = "user";
@@ -16,7 +16,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String  COL_2 = "email";
     public static final String  COL_3 = "password";
 
-    public DatabaseHelper(@Nullable Context context) {
+    public LoginDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null , 1);
     }
 
@@ -47,7 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public boolean checkUser(String username, String password){
         String[] columns = {COL_1};
         SQLiteDatabase db =getReadableDatabase();
-        String selection = COL_2 + "=?" + " and " + COL_3 + "=?";
+        String selection = COL_1 + "=?" + " and " + COL_3 + "=?";
         String[] selectionArgs = { username, password};
         Cursor cursor = db.query(TABLE_NAME,columns,selection,selectionArgs,null,null,null);
         int count = cursor.getCount();
