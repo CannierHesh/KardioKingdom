@@ -42,6 +42,15 @@ public class userinformation extends AppCompatActivity {
 
         prouser.setText(Html.fromHtml(name));
 
+        btnRemove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                del.deleteUser(name);
+                session.logoutUser();
+            }
+        });
+
+
         //proemail.setText(Html.fromHtml(del.getEmail(name)));
 
         username.setText(Html.fromHtml(name));

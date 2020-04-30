@@ -46,6 +46,7 @@ public class video extends AppCompatActivity {
         gridView.setAdapter(adapter);
 
         Cursor cursor = addVideo.videodb.getData("SELECT * FROM Video");
+
         list.clear();
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);

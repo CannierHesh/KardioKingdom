@@ -38,6 +38,8 @@ public class UserFragment extends Fragment{
 
         session.checkLogin();
 
+
+
         HashMap<String, String> user = session.getUserDetails();
 
         String name = user.get(SessionManagement.KEY_NAME);
@@ -69,7 +71,7 @@ public class UserFragment extends Fragment{
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), userinformation.class);
+                Intent i = new Intent(getActivity(), video.class);
                 startActivity(i);
             }
         });

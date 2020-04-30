@@ -89,4 +89,10 @@ public class LoginDatabaseHelper extends SQLiteOpenHelper {
         return email;
     }
 
+    public void deleteUser(String user){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME+ " WHERE "+ COL_1 +"='"+user+"'");
+        db.close();
+    }
+
 }
