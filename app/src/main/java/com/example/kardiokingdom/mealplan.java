@@ -57,7 +57,7 @@ public class mealplan extends AppCompatActivity {
                }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-               ListAdapter adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,listData);
+               ListAdapter adapter = new ArrayAdapter<>(this,R.layout.raw,listData);
                mListView.setAdapter(adapter);
 
 
