@@ -3,6 +3,7 @@ package com.example.kardiokingdom;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -15,6 +16,7 @@ public class LoginDatabaseHelper extends SQLiteOpenHelper {
     public static final String  COL_1 = "username";
     public static final String  COL_2 = "email";
     public static final String  COL_3 = "password";
+
 
     public LoginDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null , 1);
@@ -59,4 +61,20 @@ public class LoginDatabaseHelper extends SQLiteOpenHelper {
         else
             return false;
     }
+
+    public String getUsername() throws SQLException {
+        String username = "";
+        Cursor cursor = this.getReadableDatabase().query(TABLE_NAME, new String[] {COL_2},null,null,null,null,null);
+        if (cursor.moveToFirst()){
+            do{
+                username = cursor.getString(1);
+
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        return username;
+    }
+
+
+
 }

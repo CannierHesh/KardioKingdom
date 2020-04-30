@@ -9,14 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".userinformation"></activity>
+        <activity android:name=".adminPanel"></activity>
+        <activity android:name=".userinformation" />
         <activity android:name=".homepage" />
         <activity android:name=".login" />
         <activity android:name=".register" />
-
+        <activity android:name=".payment" />
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".mealplan" />
+        <activity android:name=".test03" />
+        <activity android:name=".test04" />
+        <activity android:name=".Edit" />
         <activity android:name=".UserFragment" />
+        <activity android:name=".addexercises" />
+        <activity android:name=".exes" />
+        <activity android:name=".editexercise" />
+        <activity android:name=".viewall" />
         <activity android:name=".HomeFragment" />
-        <activity android:name=".MusicFragment"/>
+        <activity android:name=".MusicFragment" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
