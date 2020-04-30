@@ -29,7 +29,7 @@ public class addexercises extends AppCompatActivity {
         editRound = (EditText)findViewById(R.id.editText6);
 
 
-        btnAdd = (Button)findViewById(R.id.button3);
+        btnAdd = (Button)findViewById(R.id.button7);
         Add();
     }
 
@@ -40,12 +40,12 @@ public class addexercises extends AppCompatActivity {
                     public void onClick(View v) {
                         boolean isInserted = myDb.insertData(editExercise.getText().toString(),editDescription.getText().toString(),editWorkout.getText().toString(),editRest.getText().toString(),editRound.getText().toString());
                         if (isInserted = true)
-                            Toast.makeText(addexercises.this," MealPlan Added",Toast.LENGTH_LONG).show();
+                            Toast.makeText(addexercises.this," Exercise Added",Toast.LENGTH_LONG).show();
                         else
                             Toast.makeText(addexercises.this,"Data not Inserted",Toast.LENGTH_LONG).show();
 
 
-                        Intent intent = new Intent(addexercises.this, exes.class);
+                        Intent intent = new Intent(addexercises.this,MainActivity.class);
                         startActivity(intent);
                     }
                 }

@@ -1,13 +1,13 @@
 package com.example.kardiokingdom;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class editexercise extends AppCompatActivity {
     PDBHandler myDb;
@@ -34,60 +34,50 @@ public class editexercise extends AppCompatActivity {
         //GET
         Intent receivedIntent = getIntent();
         selectedID = receivedIntent.getIntExtra("id",-1);
-        selectedName= receivedIntent.getStringExtra("EXERCISE");
+        selectedName= receivedIntent.getStringExtra("exercise");
         editExercise.setText(selectedName);
 
-        selectedName= receivedIntent.getStringExtra("DESCRIPTION");
+        selectedName= receivedIntent.getStringExtra("description");
         editDescription.setText(selectedName);
 
-        selectedName= receivedIntent.getStringExtra("WORKOUT");
+        selectedName= receivedIntent.getStringExtra("workout");
         editWorkout.setText(selectedName);
 
-        selectedName= receivedIntent.getStringExtra("REST");
+        selectedName= receivedIntent.getStringExtra("rest");
         editRest.setText(selectedName);
 
-        selectedName= receivedIntent.getStringExtra("ROUND");
+        selectedName= receivedIntent.getStringExtra("round");
         editRound.setText(selectedName);
 
         //DELETE
 
         Button4 = (Button)findViewById(R.id.button4);
-        Button3 = (Button)findViewById(R.id.button3);
+        Button3 = (Button)findViewById(R.id.button);
         DeleteData();
 
         myDb = new PDBHandler(this);
 
-
         Button3.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
+                PDBHandler pdbHandler = new PDBHandler(getApplicationContext());
                 editExercise = (EditText) findViewById(R.id.editText);
-                String message1 = editExercise.getText().toString();
-
                 editDescription = (EditText) findViewById(R.id.editText7);
-                String message2 = editDescription.getText().toString();
-
                 editWorkout = (EditText) findViewById(R.id.editText8);
-                String message3 = editWorkout.getText().toString();
-
                 editRest = (EditText) findViewById(R.id.editText9);
-                String message4 = editRest.getText().toString();
-
                 editRound = (EditText) findViewById(R.id.editText10);
-                String message5 = editRound.getText().toString();
 
-                Intent intent = new Intent(editexercise.this,viewall.class);
-                intent.putExtra("EXERCISE",message1);
-                intent.putExtra("DESCRIPTION",message2);
-                intent.putExtra("WORKOUT",message3);
-                intent.putExtra("REST",message4);
-                intent.putExtra("ROUND",message5);
-                startActivity(intent);
+                Boolean status = pdbHandler.updateData(editExercise.getText().toString(),editDescription.getText().toString(),editWorkout.getText().toString(),editRest.getText().toString(),editRound.getText().toString());
+                if (status){
+                    Toast.makeText(editexercise.this, "Successfully Updated", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(editexercise.this, "Update Failed", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
-
 
     }
 

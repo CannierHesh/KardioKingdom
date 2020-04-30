@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class adminPanel extends AppCompatActivity {
     AlertDialogManager alert = new AlertDialogManager();
     SessionManagement session;
-    Button logout, exersices,addexersice;;
+    Button logout, exersices,addexersice,vvideo,addvideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,8 @@ public class adminPanel extends AppCompatActivity {
 
         exersices = (Button)findViewById(R.id.exercises);
         addexersice = (Button)findViewById(R.id.addexercises);
+        vvideo = (Button)findViewById(R.id.video);
+        addvideo = (Button)findViewById(R.id.addvideo);
 
         exersices.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,6 +34,22 @@ public class adminPanel extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(adminPanel.this, addexercises.class);
+                startActivity(i);
+            }
+        });
+
+        vvideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(adminPanel.this, video.class);
+                startActivity(i);
+            }
+        });
+
+        addvideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(adminPanel.this, addVideo.class);
                 startActivity(i);
             }
         });

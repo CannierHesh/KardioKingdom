@@ -48,7 +48,6 @@
     <string name="kardiokingdom">KardioKingdom</string>
 
 
-
     <string name="todo1">TODO</string>
     <string name="heading">Payment Details</string>
     <string name="cardNo">Card No</string>
@@ -105,5 +104,6 @@
     <string name="rest">Rest</string>
     <string name="rounds">Rounds</string>
     <string name="thumb">Thumbnail</string>
+    <string name="Edit">ee</string>
 
 </resources>

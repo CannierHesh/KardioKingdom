@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/a"
+    android:background="@drawable/run"
     android:orientation="vertical"
     tools:context=".exes">
 
@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/textView8"
         android:layout_width="match_parent"
-        android:layout_height="176dp"
+        android:layout_height="76dp"
         android:baselineAligned="false"
         android:textColor="@android:color/background_light"
         android:textSize="36sp" />
@@ -20,7 +20,9 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="425dp">
+        android:scrollbarSize="20dp"
+        android:layout_height="380dp"
+        android:cacheColorHint="@android:color/background_light">
 
 
     </ListView>

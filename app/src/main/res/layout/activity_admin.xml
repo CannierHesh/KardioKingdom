@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/admineback">
+    android:background="@drawable/adminback">
 
     <ImageView
         android:id="@+id/imageView16"
@@ -87,7 +87,7 @@
         app:layout_constraintVertical_bias="0.626" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/video"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="120dp"
         android:layout_height="80dp"
@@ -100,7 +100,7 @@
         app:layout_constraintVertical_bias="0.796" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/addvideo"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="120dp"
         android:layout_height="80dp"

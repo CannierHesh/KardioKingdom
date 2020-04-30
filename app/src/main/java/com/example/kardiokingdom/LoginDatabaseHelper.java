@@ -64,7 +64,7 @@ public class LoginDatabaseHelper extends SQLiteOpenHelper {
 
     public String getUsername() throws SQLException {
         String username = "";
-        Cursor cursor = this.getReadableDatabase().query(TABLE_NAME, new String[] {COL_2},null,null,null,null,null);
+        Cursor cursor = this.getReadableDatabase().query(TABLE_NAME, new String[] {COL_1},null,null,null,null,null);
         if (cursor.moveToFirst()){
             do{
                 username = cursor.getString(1);
@@ -76,5 +76,17 @@ public class LoginDatabaseHelper extends SQLiteOpenHelper {
     }
 
 
+    public String getEmail(String username) throws SQLException {
+        String email = "";
+        Cursor cursor = this.getReadableDatabase().query(TABLE_NAME, new String[] {COL_2},COL_1 + " = " + username,null ,null,null,null,null);
+        if (cursor.moveToFirst()){
+            do{
+                email = cursor.getString(1);
+
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        return email;
+    }
 
 }

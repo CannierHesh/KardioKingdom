@@ -15,7 +15,7 @@ public class userinformation extends AppCompatActivity {
     AlertDialogManager alert = new AlertDialogManager();
     SessionManagement session;
     Button logout,btnRemove;
-    EditText prouser,proemail,propw;
+    EditText prouser,proemail;
     String name;
     LoginDatabaseHelper del;
 
@@ -29,11 +29,20 @@ public class userinformation extends AppCompatActivity {
         logout = (Button) findViewById(R.id.logout);
         btnRemove = (Button) findViewById(R.id.delete);
 
+        prouser = (EditText) findViewById(R.id.profUser);
+        proemail = (EditText) findViewById(R.id.profEmail);
+
+
+
         session.checkLogin();
 
         HashMap<String, String> user = session.getUserDetails();
 
         name = user.get(SessionManagement.KEY_NAME);
+
+        prouser.setText(Html.fromHtml(name));
+
+        //proemail.setText(Html.fromHtml(del.getEmail(name)));
 
         username.setText(Html.fromHtml(name));
 
